@@ -5,6 +5,7 @@ export default function Todo(props) {
   const { setEditing } = useContext(TodoContext);
   const task = props.task;
 
+
   function handleDelete() {
     props.remove(task);
   }
@@ -25,6 +26,8 @@ export default function Todo(props) {
           {task.clicked ? <del>{task.title}</del> : task.title}
         </span>
       </div>
+
+      <p> Started at: {task.date} </p>
       <div className="buttons">
         <div
           onClick={() => setEditing(task.id)}

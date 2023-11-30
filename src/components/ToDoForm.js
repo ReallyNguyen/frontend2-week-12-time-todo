@@ -6,14 +6,14 @@ export default function TodoForm() {
   const {
     tasks,
     addTask,
-    removeTask,
     updateTask,
     setEditing,
     editing
   } = useContext(TodoContext);
 
   let initialData = {
-    title: ""
+    title: "",
+    date: new Date().toLocaleTimeString()
   };
 
   if (editing !== "new") {
@@ -35,8 +35,11 @@ export default function TodoForm() {
   }
 
   function handleTitleChange(e, field) {
-    setTask({ ...task, [field]: e.target.value });
-    console.log(task);
+    if (field === "title") {
+      setTask({ ...task, [field]: e.target.value, date: new Date().toLocaleTimeString() });
+    } else {
+      setTask({ ...task, [field]: e.target.value });
+    }
   }
 
   return (
