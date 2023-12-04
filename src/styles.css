@@ -27,6 +27,7 @@
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+  margin-top: 3rem;
 }
 
 .form form {
@@ -76,7 +77,8 @@ form button,
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center; /* Center vertically */
+  align-items: center;
+  /* Center vertically */
   margin: 1rem 0.5rem;
   padding: 1rem 0.5rem;
 }
@@ -104,6 +106,7 @@ form button,
 .edit-btn {
   background: #555;
   cursor: pointer;
+  width: 5rem;
 }
 
 .buttons {

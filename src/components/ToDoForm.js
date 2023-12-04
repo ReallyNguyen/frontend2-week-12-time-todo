@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { nanoid } from "nanoid";
 import { TodoContext } from "../data/ToDoContext";
+import Button from "@mui/material/Button";
 
 export default function TodoForm() {
   const {
@@ -57,9 +58,9 @@ export default function TodoForm() {
         </div>
 
         <div className="form-btns">
-          <button className="add" type="submit">
+          <Button variant="contained" type="submit">
             Add
-          </button>
+          </Button>
         </div>
       </form>
     </div>

@@ -1,5 +1,9 @@
 import { TodoContext } from "../data/ToDoContext";
 import { useContext } from "react";
+import DeleteIcon from '@mui/icons-material/Delete';
+import IconButton from '@mui/material/IconButton';
+import EditIcon from '@mui/icons-material/Edit';
+
 
 export default function Todo(props) {
   const { setEditing } = useContext(TodoContext);
@@ -31,12 +35,16 @@ export default function Todo(props) {
       <div className="buttons">
         <div
           onClick={() => setEditing(task.id)}
-          className="actionButton edit-btn"
+
         >
-          edit
+          <IconButton aria-label="edit" size="large" color="success">
+            <EditIcon />
+          </IconButton>
         </div>
-        <div onClick={handleDelete} className="actionButton delete-btn">
-          remove
+        <div onClick={handleDelete}>
+          <IconButton aria-label="delete" size="large" color="error">
+            <DeleteIcon />
+          </IconButton>
         </div>
       </div>
     </div>

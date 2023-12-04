@@ -3,6 +3,8 @@ import { TodoContext } from "./data/ToDoContext";
 import "./styles.css";
 import { useState } from "react";
 import TodoForm from "./components/ToDoForm";
+import Toolbar from "@mui/material/Toolbar";
+import Button from "@mui/material/Button";
 
 export default function App() {
   const [editing, setEditing] = useState(null);
@@ -50,13 +52,24 @@ export default function App() {
           editing
         }}
       >
-        <h1>Task Management App</h1>
+        <Toolbar
+          sx={{
+            fontSize: 20,
+            backgroundColor: "blue",
+            fontWeight: 700,
+            color: "#fff",
+          }}
+
+        >
+          <h1>Task Management App</h1>
+        </Toolbar>
+
         {!editing ? (
           <>
             <Todos />
-            <button className="add" onClick={() => setEditing("new")}>
+            <Button variant="contained" onClick={() => setEditing("new")}>
               Add
-            </button>
+            </Button>
           </>
         ) : (
           <>
